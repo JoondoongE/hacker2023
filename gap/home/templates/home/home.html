@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="{% static 'home/css/main.css'%}">   
+    <script src="{% static 'home/js/main.js'%}"></script>
+    <title>hackathon</title>
+</head>
+<body>
+
+
+<div class="main">
+    <div class="leftbox">
+        <div class="menucontain">
+            <div class="menu">MENU</div>
+            <button class="button button--shikoba button--round-s button--border-thin"><i class="button__icon icon icon-microphone"></i><span><a href="{% url 'kiosk:kiosk' %}">키오스크</a></span></button>
+            {% if login_session %}
+            <button class="button button--shikoba button--round-s button--border-thin"><i class="button__icon icon icon-microphone"></i><span><a href="{% url 'account:logout' %}">로그아웃</a></span></button>
+            {% else %}
+            <button class="button button--shikoba button--round-s button--border-thin"><i class="button__icon icon icon-microphone"></i><span><a href="{% url 'account:login' %}">로그인</a></span></button>
+            {% endif %}
+            <button class="button button--shikoba button--round-s button--border-thin"><i class="button__icon icon icon-microphone"></i><span><a href="{% url 'account:register' %}">회원가입</a></span></button>
+            <button class="button button--shikoba button--round-s button--border-thin"><i class="button__icon icon icon-microphone"></i><span>결제</span></button>
+            
+            
+
+        </div>
+
+        <div class="teamname">
+            team hsu LGH & JHJ & HSI & SY
+        </div>
+    </div>
+    {% block contents %}
+    {% endblock contents %}
+
+
+    <div class="rightpage">
+        
+        <div class="rightbox">
+            <hr></hr>
+            <div class="righttextbox">쓰고싶은말</div>
+            <div class="righttextbox">쓰고싶은말</div>
+            <div class="righttextbox">쓰고싶은말</div>
+        </div>
+        
+
+
+    </div>
+</div>  
+
+
+</body>
+</html>

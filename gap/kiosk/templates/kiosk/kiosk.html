@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'kiosk/css/kiosk.css'%}" rel="stylesheet">
+    <title>kiosk_choice</title>
+</head>
+<body>
+    <div class="top">
+        <div class="leftmenu">
+            <button class="button button--shikoba button--round-s button--border-thin "><i class="button__icon icon icon-microphone"></i><span><a href="/">이전</a></span></button>
+        </div>
+    </div>
+
+
+
+    <div class="allcontainer">
+        
+        <div class="mention">연습할 키오스크를 골라주세요</div>
+        <button class="button button--shikoba button--round-s button--border-thin"><i class="button__icon icon icon-microphone"></i><span><a href="{% url 'kiosk:lotteria' %}">롯데리아</a></span></button>
+        <button class="button button--shikoba button--round-s button--border-thin"><i class="button__icon icon icon-microphone"></i><span>버거킹</span></button>
+    </div>
+</body>
+</html>
